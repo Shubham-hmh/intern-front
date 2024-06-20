@@ -13,8 +13,10 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<PrivateRoutes><Home/></PrivateRoutes>} />
-        <Route path="/edit/:id" element={<PrivateRoutes><Edit/></PrivateRoutes>} />
+        {/* <Route exact path="/" element={<PrivateRoutes><Home/></PrivateRoutes>} />
+        <Route path="/edit/:id" element={<PrivateRoutes><Edit/></PrivateRoutes>} /> */}
+        <Route exact path="/" element={<Home/>} />
+        <Route path="/edit/:id" element={<Edit/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<Signup/>} />
       </Routes>
