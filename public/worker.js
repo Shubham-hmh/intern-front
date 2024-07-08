@@ -22,7 +22,7 @@ self.addEventListener('push', event => {
 
 self.addEventListener('notificationclick', event => {
   event.notification.close();
-  const urlToOpen = event.notification.data.url ||  "https://www.feedants.com/#"
+  const urlToOpen = event.notification.data.url ||  "https://moretasks.com/"
 
   event.waitUntil(
     clients.openWindow(urlToOpen)
