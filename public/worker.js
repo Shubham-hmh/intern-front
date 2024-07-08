@@ -5,11 +5,13 @@ self.addEventListener('push', event => {
   const data = event.data.json();
   console.log('Push Received:', data);
 
-  const options = {
-    body: 'Notified by MoreTasks',
-    icon: 'https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg?size=338&ext=jpg&ga=GA1.1.1141335507.1719273600&semt=sph',
+ const options = {
+    body: data.body || 'Notified by MoreTasks',
+    icon: data.icon || 'https://moretasks.com/images/morelogo.png',
     data: {
-      url:'https://www.feedants.com/#'  
+      url: data.url || 'https://moretasks.com/',
+      timestamp: data.timestamp || Date.now(),
+      id: data.id || 'default-id'
     }
   };
 
